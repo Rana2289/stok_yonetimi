@@ -1,0 +1,58 @@
+﻿@model List<sdasd.Models.musteriler>
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Satışlar</title>
+
+</head>
+<body>
+
+    <div>
+        <div class="col-xs-6 col-md-4 col-md-push-8 col-lg-6 col-lg-push-0">
+            <div style="margin:10px; color:white" class="btn btn-warning mt-4">
+                @Html.ActionLink("Ekle", "eklemesayfasi", "satislar", new { @class = "btn" })
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-md-8 col-md-pull-4 col-lg-6 col-lg-pull-0">
+            Toplam Satış Miktarı: @ViewBag.toplamSatis
+        </div>
+    </div>
+
+
+
+    <div style="margin:10px">
+        <table class="table table-bordered table-dark">
+            <tr>
+                <th>id</th>
+                <th>Musteri Kodu</th>
+                <th>Musteri Unvanı</th>
+                <th>İl</th>
+                <th>ilçe</th>
+                <th>Satış mıiktarı</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.musteri_kodu</td>
+                    <td>@item.musteri_unvani</td>
+                    <td>@item.il</td>
+                    <td>@item.ilce</td>
+                    <td>@item.satis_miktari</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

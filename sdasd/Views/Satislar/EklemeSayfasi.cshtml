@@ -1,0 +1,45 @@
+﻿@model sdasd.Models.musteriler
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ekleme Sayfasi</title>
+  
+</head>
+<body>
+    <div class="form-group" style="padding:10px; margin:10px">
+        @using (Html.BeginForm("ekle", "satislar", new { FormMethod.Post }))
+        {
+            <div style="padding:10px; margin:10px" class="input-group form-group">
+                @Html.TextBoxFor(m => m.musteri_kodu, new { @class = "form-control", placeholder = "Musteri Kodu", autofocus = "autofocus" })
+            </div>
+            <div style="padding:10px; margin:10px" class="input-group form-group">
+                @Html.TextBoxFor(m => m.musteri_unvani, new { @class = "form-control", placeholder = "Musteri Unvanı", autofocus = "autofocus" })
+            </div>
+            <div style="padding:10px; margin:10px" class="input-group form-group">
+                @Html.TextBoxFor(m => m.il, new { @class = "form-control", placeholder = "İl", autofocus = "autofocus" })
+            </div>
+            <div style="padding:10px; margin:10px" class="input-group form-group">
+                @Html.TextBoxFor(m => m.ilce, new { @class = "form-control", placeholder = "İlçe", autofocus = "autofocus" })
+            </div>
+            <div style="padding:10px; margin:10px" class="input-group form-group">
+                @Html.TextBoxFor(m => m.satis_miktari, new { @class = "form-control", type="number",placeholder = "Satış sayısı", autofocus = "autofocus" })
+            </div>
+            <div style="padding:10px; margin:10px" class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+
+                    <div class="form-group">
+                        <input type="submit" value="Ekle" class="btn float-right login_btn">
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>
